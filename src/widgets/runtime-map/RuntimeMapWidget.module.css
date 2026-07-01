@@ -1,0 +1,153 @@
+.demo {
+  font-size: var(--text-xs);
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.wrap {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.summary {
+  flex: none;
+  color: var(--text-2);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.map {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  overflow: hidden;
+}
+
+.edges {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.edgeText {
+  fill: var(--text-3);
+  font-size: 2.15px;
+  font-family: var(--font-mono);
+  opacity: 0.82;
+  paint-order: stroke;
+  stroke: var(--surface-1);
+  stroke-width: 0.9px;
+}
+
+.node {
+  position: absolute;
+  width: min(142px, 24%);
+  min-height: 86px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  background: rgba(13, 15, 21, 0.92);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.nodeTop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.kind {
+  min-width: 0;
+  color: var(--text-3);
+  font-size: 0.64rem;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nodeLabel {
+  color: var(--text-1);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nodeDetail {
+  min-height: 30px;
+  color: var(--text-2);
+  font-size: var(--text-xs);
+  line-height: 1.25;
+  overflow: hidden;
+}
+
+.nodeStatus {
+  margin-top: auto;
+  color: var(--text-3);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.agent {
+  background: rgba(45, 212, 191, 0.08);
+}
+
+.service,
+.deploy {
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.data {
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.repo,
+.local {
+  background: rgba(52, 211, 153, 0.08);
+}
+
+.empty {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  color: var(--text-3);
+}
+
+@media (max-width: 860px) {
+  .node {
+    width: min(132px, 30%);
+    min-height: 78px;
+  }
+
+  .nodeDetail {
+    display: none;
+  }
+}

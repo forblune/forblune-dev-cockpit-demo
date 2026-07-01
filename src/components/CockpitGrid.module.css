@@ -1,0 +1,100 @@
+.board {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.cell {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+}
+
+.placeholder {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--text-3);
+  font-size: var(--text-sm);
+}
+
+/* ── 탭별 그리드 (iPad 가로, 단순) ───────────────────────────── */
+.overview {
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.85fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "mission next"
+    "mission attention";
+}
+
+.workflow {
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.9fr);
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-areas: "architecture pipeline";
+}
+
+.infra {
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.9fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "infra rpi"
+    "infra env";
+}
+
+.agents {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-areas: "workflows usage";
+}
+
+/* 좁은 화면(세로/소형) — 단일 컬럼 스택 */
+@media (max-width: 860px) {
+  .page {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .overview {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(300px, 1fr) minmax(220px, 0.8fr) minmax(220px, 0.8fr);
+    grid-template-areas:
+      "mission"
+      "next"
+      "attention";
+  }
+  .workflow {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(420px, 1.2fr) minmax(260px, 0.8fr);
+    grid-template-areas:
+      "architecture"
+      "pipeline";
+  }
+  .infra {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(360px, 1fr) minmax(240px, 0.7fr) minmax(220px, 0.7fr);
+    grid-template-areas:
+      "infra"
+      "rpi"
+      "env";
+  }
+  .agents {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(320px, 1fr) minmax(260px, 0.8fr);
+    grid-template-areas:
+      "workflows"
+      "usage";
+  }
+}

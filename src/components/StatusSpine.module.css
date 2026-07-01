@@ -1,0 +1,73 @@
+/* 상단 작업-상태 스파인 — 하단 StatusBar의 대칭(헤더). 가로 스크롤, compact. */
+.spine {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: none;
+  min-height: 52px;
+  padding: 0 var(--space-4);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-1);
+  font-size: var(--text-xs);
+  color: var(--text-2);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+.spine::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: none;
+  padding: 4px var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.warn {
+  border-color: var(--fresh-offline);
+}
+
+.label {
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.value {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-1);
+}
+.strong {
+  color: var(--text-1);
+}
+
+.prio {
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.02em;
+}
+.pNow {
+  color: var(--fresh-offline);
+}
+.pSoon {
+  color: var(--fresh-stale);
+}
+.pLater {
+  color: var(--text-3);
+}
+
+.muted {
+  color: var(--text-3);
+}
+
+.demo {
+  flex: none;
+  color: var(--text-3);
+  font-style: italic;
+}

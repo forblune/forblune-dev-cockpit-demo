@@ -1,0 +1,85 @@
+/*
+ * forblune cockpit — design tokens.
+ * The shared visual language every widget (and every future demo workspace pack) inherits.
+ * Dark / OLED by default; a high-contrast theme via [data-theme="contrast"].
+ */
+:root {
+  color-scheme: dark;
+
+  /* ---- surfaces (OLED dark, deliberately no pure white) ---- */
+  --bg: #06070a; /* near-black page */
+  --surface-1: #0d0f15; /* widget frame */
+  --surface-2: #14171f; /* nested panel */
+  --surface-3: #1c2029; /* rows / chips */
+  --border: #232838;
+  --border-strong: #2f3548;
+
+  /* ---- text ---- */
+  --text-1: #e8ecf4; /* primary (not pure white) */
+  --text-2: #9aa3b6; /* secondary */
+  --text-3: #5d6678; /* tertiary / muted */
+
+  /* ---- accent / brand ---- */
+  --accent: #2dd4bf; /* teal */
+  --accent-dim: #1a8b80;
+
+  /* ---- status palette (glanceable, color-coded) ---- */
+  --status-passing: #34d399; /* green  — CI passing */
+  --status-running: #fbbf24; /* amber  — running */
+  --status-failing: #f87171; /* red    — failed */
+  --status-review: #a78bfa; /* purple — review requested */
+  --status-none: #5d6678; /* gray   — none / unknown */
+
+  /* ---- data freshness (live / stale / offline) ---- */
+  --fresh-live: var(--status-passing);
+  --fresh-stale: var(--status-running);
+  --fresh-offline: var(--status-none);
+
+  /* ---- type ---- */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui,
+    sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 3.25rem;
+  --text-hero: clamp(3rem, 9vh, 5.5rem); /* big readouts: clock, timer */
+
+  --weight-normal: 400;
+  --weight-medium: 550;
+  --weight-bold: 700;
+
+  /* ---- spacing ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* ---- shape ---- */
+  --radius: 18px;
+  --radius-sm: 10px;
+
+  /* ---- touch ---- */
+  --tap-min: 44px;
+
+  /* ---- always-on dimming (battery / night), driven by SystemLifecycle ---- */
+  --dim: 1;
+}
+
+/* High-contrast theme: blacker bg, brighter ink, stronger borders. */
+[data-theme="contrast"] {
+  --bg: #000000;
+  --surface-1: #0a0c12;
+  --surface-2: #12151d;
+  --surface-3: #1e222c;
+  --border: #394152;
+  --border-strong: #4a5468;
+  --text-1: #ffffff;
+  --text-2: #c7cedd;
+  --text-3: #7c8699;
+}

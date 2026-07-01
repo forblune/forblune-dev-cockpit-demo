@@ -1,0 +1,44 @@
+/* 상단 섹션 탭 바 — StatusSpine 아래. 가로 스크롤, iPad 터치 타깃. */
+.tabbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px var(--space-4);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-1);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.tabbar::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex: none;
+  min-height: var(--tap-min, 44px);
+  padding: 0 var(--space-3);
+  border: 1px solid transparent;
+  border-bottom-width: 3px;
+  border-radius: 8px;
+  background: none;
+  box-sizing: border-box;
+  color: var(--text-3);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.tab:hover {
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+.active {
+  background: var(--surface-2);
+  color: var(--text-1);
+  font-weight: var(--weight-bold);
+  border-color: var(--border-strong);
+  border-bottom-color: var(--accent);
+}
