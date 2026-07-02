@@ -12,9 +12,10 @@ export default defineConfig(({ command }) => ({
       registerType: 'autoUpdate',
       includeAssets: ['icon.svg'],
       manifest: {
-        name: 'AI Dev Cockpit Demo',
+        name: 'Forblune Dev Cockpit',
         short_name: 'cockpit',
-        description: 'A public demo dashboard for an AI-assisted development cockpit',
+        description:
+          "AI-native personal dev cockpit — a public demo of a solo builder's mission control for mission, next action, agents, and infra.",
         theme_color: '#0a0a0f',
         background_color: '#0a0a0f',
         display: 'standalone',

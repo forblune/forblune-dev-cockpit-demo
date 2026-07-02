@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "A public demo dashboard for an AI-assisted development cockpit.",
+  "description": "AI-native personal dev cockpit — a public demo of a solo builder's mission control for mission, next action, agents, and infra.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
