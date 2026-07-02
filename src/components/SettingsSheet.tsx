@@ -79,7 +79,7 @@ export function SettingsSheet({ open, onClose }: Props) {
           value={observerText}
           onChange={(e) => setObserverText(e.target.value)}
           onBlur={saveObserver}
-          placeholder="http://example.local:4317"
+          placeholder="http://example.local:4000"
           spellCheck={false}
         />
         <span className={styles.hint}>
@@ -87,7 +87,7 @@ export function SettingsSheet({ open, onClose }: Props) {
         </span>
       </div>
 
-      {/* Demo Server (Edge Device) summary */}
+      {/* Demo status-summary endpoint (optional) */}
       <div className={styles.section}>
         <span className={styles.label}>Demo Server summary endpoint</span>
         <input

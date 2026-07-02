@@ -1,12 +1,12 @@
 import { WidgetFrame } from '../../components/WidgetFrame'
 import { STATUS_COLOR, STATUS_LABEL, needsAttention } from '../dev-observer/status'
 import { useDevSnapshot } from '../dev-observer/useDevSnapshot'
-import styles from './RpiWidget.module.css'
+import styles from './EdgeDeviceWidget.module.css'
 
-export function RpiWidget() {
+export function EdgeDeviceWidget() {
   const { reading, isDemo } = useDevSnapshot()
-  const rpi = reading.lastKnown?.rpi ?? null
-  const alert = !isDemo && rpi != null && needsAttention(rpi.status)
+  const edgeDevice = reading.lastKnown?.edgeDevice ?? null
+  const alert = !isDemo && edgeDevice != null && needsAttention(edgeDevice.status)
 
   return (
     <WidgetFrame
@@ -17,53 +17,58 @@ export function RpiWidget() {
       alert={alert}
       headerExtra={isDemo ? <span className={styles.demo}>Demo</span> : undefined}
     >
-      {rpi == null ? (
+      {edgeDevice == null ? (
         <div className={styles.empty}>
           <strong>Edge Device 미연결</strong>
           <span>
             Demo data source에 <code>DEMO_EDGE_URL</code>을 설정하면 표시됩니다.
           </span>
         </div>
-      ) : !rpi.reachable ? (
+      ) : !edgeDevice.reachable ? (
         <div className={styles.empty}>
           <strong>연결 안 됨</strong>
-          <span>{rpi.detail ?? 'rpi API에 도달하지 못했습니다.'}</span>
+          <span>{edgeDevice.detail ?? 'Edge Device API에 도달하지 못했습니다.'}</span>
         </div>
       ) : (
         <div className={styles.body}>
           <div className={styles.headline}>
             <div className={styles.readiness}>
               <span className={styles.num}>
-                {rpi.readinessPercent != null ? `${Math.round(rpi.readinessPercent)}%` : '—'}
+                {edgeDevice.readinessPercent != null
+                  ? `${Math.round(edgeDevice.readinessPercent)}%`
+                  : '—'}
               </span>
               <span className={styles.numLabel}>준비도</span>
             </div>
-            <span className={styles.health} style={{ color: STATUS_COLOR[rpi.status] }}>
-              <span className={styles.dot} style={{ background: STATUS_COLOR[rpi.status] }} />
-              {rpi.health ?? STATUS_LABEL[rpi.status]}
+            <span className={styles.health} style={{ color: STATUS_COLOR[edgeDevice.status] }}>
+              <span
+                className={styles.dot}
+                style={{ background: STATUS_COLOR[edgeDevice.status] }}
+              />
+              {edgeDevice.health ?? STATUS_LABEL[edgeDevice.status]}
             </span>
           </div>
 
           <div className={styles.row}>
             <span className={styles.k}>Docker</span>
-            <span className={styles.v}>{rpi.docker ?? '—'}</span>
+            <span className={styles.v}>{edgeDevice.docker ?? '—'}</span>
           </div>
 
           <div className={styles.metrics}>
-            <Gauge label="CPU" percent={rpi.cpuPercent} />
-            <Gauge label="RAM" percent={rpi.ramPercent} />
-            <Gauge label="Disk" percent={rpi.diskPercent} />
+            <Gauge label="CPU" percent={edgeDevice.cpuPercent} />
+            <Gauge label="RAM" percent={edgeDevice.ramPercent} />
+            <Gauge label="Disk" percent={edgeDevice.diskPercent} />
           </div>
 
           <div className={styles.rows}>
             <div className={styles.row}>
               <span className={styles.k}>백업</span>
-              <span className={styles.v}>{rpi.lastBackup ?? '정보 없음'}</span>
+              <span className={styles.v}>{edgeDevice.lastBackup ?? '정보 없음'}</span>
             </div>
-            {rpi.nextAction && (
+            {edgeDevice.nextAction && (
               <div className={styles.row}>
                 <span className={styles.k}>다음</span>
-                <span className={styles.v}>{rpi.nextAction}</span>
+                <span className={styles.v}>{edgeDevice.nextAction}</span>
               </div>
             )}
           </div>

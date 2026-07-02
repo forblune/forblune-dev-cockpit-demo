@@ -53,12 +53,8 @@ export function useDevSnapshot(): {
   }
 }
 
+// Public demo: no local endpoint is guessed by default. Connect a real observer
+// explicitly via the Settings sheet (Demo data endpoint).
 function inferObserverUrl(): string | null {
-  if (typeof window === 'undefined') return null
-  const { protocol, hostname } = window.location
-  if (!hostname) return null
-  // Match the page protocol: an HTTPS cockpit must reach an HTTPS observer,
-  // otherwise the browser blocks the request as mixed content.
-  const scheme = protocol === 'https:' ? 'https' : 'http'
-  return `${scheme}://${hostname}:4317`
+  return null
 }

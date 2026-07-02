@@ -62,7 +62,7 @@ describe('fetchDevSnapshot', () => {
       'fetch',
       vi.fn(async () => jsonResponse({}, 503)),
     )
-    await expect(fetchDevSnapshot('http://localhost:4317')).rejects.toThrow('observer 503')
+    await expect(fetchDevSnapshot('http://localhost:8080')).rejects.toThrow('observer 503')
   })
 
   it('appends /snapshot, defaults missing sections, and clamps usage', async () => {
@@ -80,8 +80,8 @@ describe('fetchDevSnapshot', () => {
     )
     vi.stubGlobal('fetch', spy)
 
-    const snap = await fetchDevSnapshot('http://localhost:4317/')
-    expect(spy).toHaveBeenCalledWith('http://localhost:4317/snapshot', { cache: 'no-store' })
+    const snap = await fetchDevSnapshot('http://localhost:8080/')
+    expect(spy).toHaveBeenCalledWith('http://localhost:8080/snapshot', { cache: 'no-store' })
     expect(snap.env).toEqual({ checks: [] })
     expect(snap.infra).toEqual({ services: [], edges: [] })
     expect(snap.usage[0].usedPercent).toBe(100)

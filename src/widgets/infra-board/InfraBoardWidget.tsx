@@ -168,7 +168,7 @@ function fallbackServices(snapshot: DevSnapshot | null | undefined): InfraServic
       status: nodeStatus('supabase'),
       signal: nodeDetail('supabase', 'supabase not detected'),
       detail: 'data layer status unknown',
-      checks: ['VITE_SUPABASE_URL', 'VITE_SUPABASE_ANON_KEY'],
+      checks: ['VITE_SUPABASE_URL', 'DEMO_PUBLIC_CLIENT_KEY'],
     },
   ]
 }

@@ -25,14 +25,14 @@ describe('toRows', () => {
       {
         number: 7,
         title: 'Fix the thing',
-        repository: { nameWithOwner: 'forblune/dev-cockpit' },
+        repository: { nameWithOwner: 'demo-labs/mission-control' },
         commits: { nodes: [{ commit: { statusCheckRollup: { state: 'FAILURE' } } }] },
       },
     ])
     expect(rows).toHaveLength(1)
-    expect(rows[0].repo).toBe('forblune/dev-cockpit')
+    expect(rows[0].repo).toBe('demo-labs/mission-control')
     expect(rows[0].ci).toBe('failing')
-    expect(rows[0].id).toBe('forblune/dev-cockpit#7')
+    expect(rows[0].id).toBe('demo-labs/mission-control#7')
   })
 
   it('defaults CI to none when the rollup is absent', () => {

@@ -9,11 +9,11 @@ import styles from './TabBar.module.css'
 export type TabId = 'overview' | 'workflow' | 'infra' | 'agents' | 'settings'
 
 const TABS: { id: TabId; label: string }[] = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'workflow', label: 'Workflow' },
-  { id: 'infra', label: 'Infra' },
-  { id: 'agents', label: 'Agents' },
-  { id: 'settings', label: 'Settings' },
+  { id: 'overview', label: '개요' },
+  { id: 'workflow', label: '워크플로우' },
+  { id: 'infra', label: '인프라' },
+  { id: 'agents', label: '에이전트' },
+  { id: 'settings', label: '설정' },
 ]
 
 export function TabBar({ active, onSelect }: { active: TabId; onSelect: (id: TabId) => void }) {

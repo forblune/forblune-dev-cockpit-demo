@@ -31,7 +31,7 @@ export function CockpitGrid({ activeTab }: { activeTab: TabId }) {
         {showWorkflowBand && <AgentWorkflow />}
         <div className={styles.placeholder}>
           {activeTab === 'settings'
-            ? '설정은 우하단 ⚙ 버튼에서 — 다음 단계에서 이 탭으로 통합됩니다.'
+            ? '설정은 우하단 ⚙ 버튼에서 확인할 수 있어요.'
             : 'No widgets in this tab'}
         </div>
       </div>

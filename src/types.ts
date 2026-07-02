@@ -114,7 +114,7 @@ export interface InfraService {
  * Edge Device demo snapshot. All fields are nullable so partial or unavailable
  * demo data degrades honestly instead of faking values.
  */
-export interface RpiStatus {
+export interface EdgeDeviceStatus {
   status: SystemStatus
   reachable: boolean
   health: string | null
@@ -149,7 +149,7 @@ export interface DevSnapshot {
   }
   nextActions: NextAction[]
   /** Edge Device server status; null when DEMO_EDGE_URL is unset or unreachable. */
-  rpi?: RpiStatus | null
+  edgeDevice?: EdgeDeviceStatus | null
 }
 
 /**

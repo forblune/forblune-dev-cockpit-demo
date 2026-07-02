@@ -2,10 +2,10 @@ import { agentWorkflowsManifest } from './agent-workflows/manifest'
 import { architectureMapManifest } from './architecture-map/manifest'
 import { attentionRadarManifest } from './attention-radar/manifest'
 import { currentMissionManifest } from './current-mission/manifest'
+import { edgeDeviceManifest } from './edge-device/manifest'
 import { envChecklistManifest } from './env-checklist/manifest'
 import { infraBoardManifest } from './infra-board/manifest'
 import { nextActionManifest } from './next-action/manifest'
-import { rpiManifest } from './rpi/manifest'
 import { runtimeMapManifest } from './runtime-map/manifest'
 import { usageManifest } from './usage/manifest'
 import { voiceNotesManifest } from './voice-notes/manifest'
@@ -28,7 +28,7 @@ export const WIDGETS: WidgetManifest[] = [
   nextActionManifest,
   workflowPipelineManifest,
   infraBoardManifest,
-  rpiManifest,
+  edgeDeviceManifest,
   voiceNotesManifest,
 ]
 
@@ -57,7 +57,7 @@ export const WIDGET_PAGES: WidgetPage[] = [
   {
     id: 'infra',
     label: 'Infra',
-    widgetIds: ['infra-board', 'rpi', 'env-checklist'],
+    widgetIds: ['infra-board', 'edge-device', 'env-checklist'],
   },
   {
     id: 'agents',

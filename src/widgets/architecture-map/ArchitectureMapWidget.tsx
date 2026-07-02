@@ -56,7 +56,7 @@ const NODES: ArchNode[] = [
     name: 'FastAPI',
     role: '백엔드 API',
     description:
-      'Demo backend service status appears here. When this node is healthy, /demo/status is responding.',
+      '데모 백엔드 서비스 상태가 여기 표시됩니다. 이 노드가 정상이면 /demo/status가 응답 중이라는 뜻이에요.',
     extend: 'n8n(자동화)·Grafana(메트릭)를 API 옆에 연결할 수 있어요.',
   },
   {
@@ -67,12 +67,12 @@ const NODES: ArchNode[] = [
     description: 'FastAPI 앱을 컨테이너로 패키징해 어디서나 똑같이 실행합니다.',
   },
   {
-    id: 'rpi',
+    id: 'edge-device',
     icon: '🍓',
     name: 'Edge Device',
     role: '배포 대상 서버 (Demo Server)',
-    description: 'Demo workload runs on an Edge Device and reports status back to the cockpit.',
-    extend: 'Additional demo services can be layered onto the Edge Device.',
+    description: '데모 워크로드가 Edge Device에서 실행되며, 그 상태를 대시보드로 보고합니다.',
+    extend: '추가 데모 서비스를 Edge Device 위에 얹을 수 있어요.',
   },
   {
     id: 'dashboard',
@@ -142,7 +142,7 @@ function deriveStates(
 
   let fastapi: NodeState
   let docker: NodeState
-  let rpi: NodeState
+  let edgeDevice: NodeState
 
   if (summary) {
     fastapi = {
@@ -160,7 +160,7 @@ function deriveStates(
         }
       : { status: 'unknown', note: 'docker 정보 없음' }
     const blocked = summary.blockers.length > 0
-    rpi = {
+    edgeDevice = {
       status: stale || blocked ? 'warning' : 'healthy',
       note: blocked
         ? `warning ${summary.blockers.length}건`
@@ -171,7 +171,7 @@ function deriveStates(
   } else {
     fastapi = { status: failStatus, note: failNote }
     docker = { status: failStatus, note: failNote }
-    rpi = { status: failStatus, note: failNote }
+    edgeDevice = { status: failStatus, note: failNote }
   }
 
   return {
@@ -180,7 +180,7 @@ function deriveStates(
     codex: { status: 'unknown', note: 'adapter not connected' },
     fastapi,
     docker,
-    rpi,
+    'edge-device': edgeDevice,
     dashboard: { status: 'unknown', note: 'adapter not connected' },
   }
 }
@@ -249,7 +249,7 @@ export function ArchitectureMapWidget() {
                 </span>
               </div>
               <p className={styles.detailDesc}>{node.description}</p>
-              {node.id === 'rpi' && configured && (
+              {node.id === 'edge-device' && configured && (
                 <ServerManagement summary={summary} status={reading.status} failure={failure} />
               )}
               {node.extend && <p className={styles.extend}>➕ {node.extend}</p>}

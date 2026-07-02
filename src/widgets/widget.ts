@@ -40,7 +40,7 @@ export type WidgetId =
   | 'current-mission'
   | 'attention-radar'
   | 'env-checklist'
-  | 'rpi'
+  | 'edge-device'
   | 'architecture-map'
 
 /** Named grid slots; the concrete layout lives in CockpitGrid's CSS template. */
@@ -60,7 +60,7 @@ export type GridArea =
   | 'mission'
   | 'attention'
   | 'env'
-  | 'rpi'
+  | 'edge-device'
   | 'architecture'
 
 export const DEFAULT_WIDGET_IDS: WidgetId[] = [
@@ -68,7 +68,7 @@ export const DEFAULT_WIDGET_IDS: WidgetId[] = [
   'runtime-map',
   'workflow-pipeline',
   'infra-board',
-  'rpi',
+  'edge-device',
   'current-mission',
   'attention-radar',
   'env-checklist',

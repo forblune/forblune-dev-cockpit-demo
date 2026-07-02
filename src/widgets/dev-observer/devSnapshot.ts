@@ -54,7 +54,7 @@ export function buildDemoSnapshot(now = Date.now()): DevSnapshot {
         status: 'attention',
         progress: 35,
         currentStep: '환경 변수와 DB 권한 확인 필요',
-        lastEvent: 'SUPABASE_SERVICE_ROLE_KEY가 Render 환경에 있는지 사람 확인 필요',
+        lastEvent: 'DEMO_SERVICE_KEY가 Render 환경에 있는지 사람 확인 필요',
         updatedAt: now - 11 * MINUTE,
       },
     ],
@@ -145,8 +145,8 @@ export function buildDemoSnapshot(now = Date.now()): DevSnapshot {
           detail: '.env.local',
         },
         {
-          key: 'VITE_SUPABASE_ANON_KEY',
-          label: 'Supabase anon key',
+          key: 'DEMO_PUBLIC_CLIENT_KEY',
+          label: 'Demo public client key',
           status: 'healthy',
           source: 'file',
           scope: 'local',
@@ -200,7 +200,7 @@ export function buildDemoSnapshot(now = Date.now()): DevSnapshot {
           status: 'attention',
           signal: 'project hints detected',
           detail: 'required browser env missing',
-          checks: ['VITE_SUPABASE_URL', 'VITE_SUPABASE_ANON_KEY'],
+          checks: ['VITE_SUPABASE_URL', 'DEMO_PUBLIC_CLIENT_KEY'],
         },
       ],
       edges: [
@@ -234,7 +234,7 @@ export function buildDemoSnapshot(now = Date.now()): DevSnapshot {
         priority: 'later',
       },
     ],
-    rpi: {
+    edgeDevice: {
       status: 'healthy',
       reachable: true,
       health: 'OK',
@@ -283,7 +283,7 @@ export async function fetchDevSnapshot(observerUrl: string): Promise<DevSnapshot
     env: snapshot.env ?? { checks: [] },
     infra: snapshot.infra ?? { services: [], edges: [] },
     usage: snapshot.usage.map(clampUsage),
-    rpi: snapshot.rpi ?? null,
+    edgeDevice: snapshot.edgeDevice ?? null,
   }
 }
 

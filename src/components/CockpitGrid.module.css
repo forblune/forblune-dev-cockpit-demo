@@ -51,7 +51,7 @@
   grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.9fr);
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas:
-    "infra rpi"
+    "infra edge-device"
     "infra env";
 }
 
@@ -87,7 +87,7 @@
     grid-template-rows: minmax(360px, 1fr) minmax(240px, 0.7fr) minmax(220px, 0.7fr);
     grid-template-areas:
       "infra"
-      "rpi"
+      "edge-device"
       "env";
   }
   .agents {
