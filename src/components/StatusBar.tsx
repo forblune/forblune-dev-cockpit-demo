@@ -24,7 +24,7 @@ export function StatusBar({ onOpenSettings }: Props) {
   return (
     <footer className={styles.bar}>
       <div className={styles.brand}>
-        ai dev <span className={styles.accent}>cockpit</span>
+        forblune <span className={styles.accent}>dev cockpit</span>
       </div>
       <div className={styles.spacer} />
       <div className={styles.item}>

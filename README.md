@@ -1,22 +1,43 @@
-# AI Dev Cockpit Demo
+# Forblune Dev Cockpit — AI-Native Dev Command Center (Demo)
 
-A public demo dashboard for an AI-assisted development cockpit.
+**A public demo of a personal operating dashboard for AI-assisted development.**
 
-This repository contains a static, demo-safe version of a cockpit UI that helps answer three questions:
+Solo builders and AI-assisted developers juggle a lot at once — agent runs, CI,
+deploy targets, env config — with no single screen that says "here's what
+matters right now." This is a portfolio-safe demo of a cockpit built to solve
+that for one person's own workflow: mission, next action, blockers, agents,
+and infra in one glance instead of five tabs.
 
-- What is the current mission?
-- What is the next useful action?
-- What needs attention?
+## What this answers
+
+| Question | Where |
+|---|---|
+| What is this? | This README + the Overview tab |
+| What's the current mission? | **Overview** → Current Mission |
+| What should I do next? | **Overview** → Next Action |
+| What's blocked or needs me? | **Overview** → Attention Radar |
+| What agents/tools are active? | **Agents** → Agent Workflows, Usage |
+| What's the path from idea to deploy? | **Workflow** → Idea → Spec → Build → Test → Deploy → Observe |
+| Is my infrastructure healthy? | **Infra** → service status, env checks |
+
+## Demo mode
+
+Every widget shows a small **Demo** badge when it's rendering bundled sample
+data instead of a live source — nothing here is faked as real. A widget either
+shows live data with an honest freshness state (live / stale / offline) or
+plainly says "demo." Settings optionally lets you point the dashboard at your
+own local endpoint to replace the sample data; the demo is fully functional
+without touching Settings at all.
 
 The app uses local demo data only. It does not include private infrastructure details, real server endpoints, personal logs, API keys, or operational runbooks.
 
 ## Demo Sections
 
-- Overview: current mission, next action, and attention summary.
-- Workflow: demo workflow band, system map, and pipeline view.
-- Infra: demo service status and edge-device readiness.
-- Agents: demo agent work and usage summary.
-- Settings: local UI preferences and demo-only controls.
+- **Overview** — current mission, next action, and what needs attention.
+- **Workflow** — Idea → Spec → Build → Test → Deploy → Observe, plus a live system map.
+- **Infra** — demo service status (GitHub / deploy target / database) and edge-device readiness.
+- **Agents** — which AI agents are working on what, and their usage limits.
+- **Settings** — every field is optional; the demo works fully without touching this tab.
 
 ## Development
 

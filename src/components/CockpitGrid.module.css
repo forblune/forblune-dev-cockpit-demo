@@ -7,6 +7,14 @@
   flex-direction: column;
 }
 
+.pageHead {
+  flex: none;
+  margin: 0;
+  padding: var(--space-3) var(--space-4) 0;
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
 .page {
   flex: 1;
   min-width: 0;

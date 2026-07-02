@@ -28,6 +28,7 @@ export function CockpitGrid({ activeTab }: { activeTab: TabId }) {
   if (!page || widgets.length === 0) {
     return (
       <div className={styles.board}>
+        {page && <p className={styles.pageHead}>{page.blurb}</p>}
         {showWorkflowBand && <AgentWorkflow />}
         <div className={styles.placeholder}>
           {activeTab === 'settings'
@@ -40,6 +41,7 @@ export function CockpitGrid({ activeTab }: { activeTab: TabId }) {
 
   return (
     <div className={styles.board}>
+      <p className={styles.pageHead}>{page.blurb}</p>
       {showWorkflowBand && <AgentWorkflow />}
       <section
         className={`${styles.page} ${styles[page.id]}`}

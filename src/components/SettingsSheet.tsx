@@ -70,6 +70,11 @@ export function SettingsSheet({ open, onClose }: Props) {
 
   return (
     <Sheet open={open} onClose={onClose} title="설정">
+      <p className={styles.intro}>
+        이 데모는 설정 없이도 전부 작동해요. 아래는 모두 선택 사항이고, 원하면 내 데이터로 바꿔볼 수
+        있어요.
+      </p>
+
       {/* Demo data source */}
       <div className={styles.section}>
         <span className={styles.label}>Demo data endpoint</span>
