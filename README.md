@@ -87,3 +87,7 @@ This demo intentionally avoids:
 - internal API routes
 - API keys, tokens, or secrets
 - personal development logs
+
+---
+
+Designed and built by **forblune** as a public demo of an AI-native personal dev cockpit.

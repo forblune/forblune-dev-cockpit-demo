@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "description": "AI-native personal dev cockpit — a public demo of a solo builder's mission control for mission, next action, agents, and infra.",
+  "author": "forblune",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
