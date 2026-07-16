@@ -16,6 +16,24 @@ and infra in one glance instead of five tabs.
 
 _The Overview tab — current mission, next action, and what needs attention. All data shown is demo data._
 
+## Origin
+
+This repository is a public, portfolio-safe demonstration derived from
+a separate private operational project.
+
+The private project contains local integration and operational context
+that are intentionally excluded here. The private repository is not linked
+from this README because it is not publicly accessible.
+
+What this boundary means:
+
+- demo data only
+- no private API routes
+- no LAN identifiers
+- no private logs
+- no production credentials
+- no guarantee that the public demo reflects the latest private runtime
+
 ## What this answers
 
 | Question | Where |
