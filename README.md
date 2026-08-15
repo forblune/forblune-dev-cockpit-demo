@@ -1,16 +1,14 @@
-# Forblune Dev Cockpit — AI-Native Dev Command Center (Demo)
+# Forblune Dev Cockpit — Development Operations Dashboard
 
 **[Live Demo →](https://forblune.github.io/forblune-dev-cockpit-demo/)**
 
 [![Deploy to GitHub Pages](https://github.com/forblune/forblune-dev-cockpit-demo/actions/workflows/deploy.yml/badge.svg)](https://github.com/forblune/forblune-dev-cockpit-demo/actions/workflows/deploy.yml)
 
-**A public demo of a personal operating dashboard for AI-assisted development.**
+**A public demo of a personal development operations dashboard.**
 
-Solo builders and AI-assisted developers juggle a lot at once — agent runs, CI,
-deploy targets, env config — with no single screen that says "here's what
-matters right now." This is a portfolio-safe demo of a cockpit built to solve
-that for one person's own workflow: mission, next action, blockers, agents,
-and infra in one glance instead of five tabs.
+Solo builders often split current work, CI, deploy targets, environment checks,
+and review queues across several tabs. This portfolio-safe demo puts the current
+task, next action, blockers, tools, and service status on one screen.
 
 ![Overview tab of the Forblune Dev Cockpit demo, showing the current mission, next action, and attention radar widgets](public/screenshots/overview.png)
 
@@ -108,4 +106,4 @@ This demo intentionally avoids:
 
 ---
 
-Designed and built by **forblune** as a public demo of an AI-native personal dev cockpit.
+Designed and built by **forblune** as a public demo of a personal development operations dashboard.

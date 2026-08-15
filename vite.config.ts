@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => ({
         name: 'Forblune Dev Cockpit',
         short_name: 'cockpit',
         description:
-          "AI-native personal dev cockpit — a public demo of a solo builder's mission control for mission, next action, agents, and infra.",
+          'Personal development operations dashboard demo for current work, next actions, review queues, and service status.',
         theme_color: '#0a0a0f',
         background_color: '#0a0a0f',
         display: 'standalone',
