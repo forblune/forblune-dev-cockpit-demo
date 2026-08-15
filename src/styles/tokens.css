@@ -7,12 +7,12 @@
   color-scheme: dark;
 
   /* ---- surfaces (OLED dark, deliberately no pure white) ---- */
-  --bg: #06070a; /* near-black page */
-  --surface-1: #0d0f15; /* widget frame */
-  --surface-2: #14171f; /* nested panel */
-  --surface-3: #1c2029; /* rows / chips */
-  --border: #232838;
-  --border-strong: #2f3548;
+  --bg: #0b0d0f; /* near-black page */
+  --surface-1: #111417; /* widget frame */
+  --surface-2: #161a1e; /* nested panel */
+  --surface-3: #1b2025; /* rows / chips */
+  --border: #30363d;
+  --border-strong: #454d56;
 
   /* ---- text ---- */
   --text-1: #e8ecf4; /* primary (not pure white) */
@@ -61,8 +61,8 @@
   --space-6: 32px;
 
   /* ---- shape ---- */
-  --radius: 18px;
-  --radius-sm: 10px;
+  --radius: 4px;
+  --radius-sm: 2px;
 
   /* ---- touch ---- */
   --tap-min: 44px;
