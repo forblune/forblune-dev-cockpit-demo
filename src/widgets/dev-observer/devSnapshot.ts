@@ -38,7 +38,7 @@ export function buildDemoSnapshot(now = Date.now()): DevSnapshot {
         agent: 'codex',
         repo: 'forblune-dev-cockpit-demo',
         branch: 'main',
-        goal: 'AI 개발 관제판으로 리디자인',
+        goal: '개발 작업 상태판을 실제 운영 흐름에 맞게 정리',
         status: 'running',
         progress: 62,
         currentStep: 'Runtime Map, Usage, Next Action 위젯 구성',
